@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}Store - Home{% endblock %} {% block
+content %}
+<h1>Featured Games</h1>
+<div class="grid">
+  {% for g in games %}
+  <div class="card">
+    <h3>{{ g.title }}</h3>
+    <p>{{ g.description }}</p>
+    <p><strong>₹{{ '%.2f'|format(g.price) }}</strong></p>
+    <a href="/game/{{ g.id }}">View</a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

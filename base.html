@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{% block title %}Mini Store{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/">Home</a>
+      {% if user %}
+      <span>Hi {{ user.username }}</span>
+      <a href="/logout">Logout</a>
+      {% else %}
+      <a href="/login">Login</a>
+      {% endif %}
+    </nav>
+    <main>
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="flash">{{ messages[0] }}</div>
+      {% endif %} {% endwith %} {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

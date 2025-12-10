@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %}{{ game.title }} - Store{% endblock
+%} {% block content %}
+<h1>{{ game.title }}</h1>
+<p>{{ game.description }}</p>
+<p>Tags: {{ game.tags }}</p>
+<p>Price: ₹{{ '%.2f'|format(game.price) }}</p>
+<a href="/toggle_wishlist/{{ game.id }}"
+  >{% if in_wishlist %}Remove from Wishlist{% else %}Add to Wishlist{% endif
+  %}</a
+>
+{% endblock %}

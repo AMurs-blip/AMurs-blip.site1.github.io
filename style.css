@@ -1,0 +1,5 @@
+body{font-family:system-ui,Segoe UI,Helvetica,Arial;background:#f5f7fb;color:#111}
+.nav{background:#111;color:#fff;padding:12px}
+.nav a{color:#fff;margin-right:12px}
+.grid{display:flex;gap:12px}
+.card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);width:220px}
